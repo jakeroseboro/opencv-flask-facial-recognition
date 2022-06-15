@@ -1,5 +1,5 @@
 from flask import Flask, Response, render_template
-
+from flask_bootstrap import Bootstrap
 from camera import webcam_face_detect
 import flask_cors
 import sys
@@ -7,6 +7,7 @@ import logging
 
 cors = flask_cors.CORS()
 app = Flask(__name__)
+Bootstrap(app)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 cors.init_app(app, resources={r"/*": {"origins": "*"}})
