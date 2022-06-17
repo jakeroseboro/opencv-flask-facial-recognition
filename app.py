@@ -1,3 +1,5 @@
+import uuid
+
 from flask import Flask, Response, render_template
 from flask_bootstrap import Bootstrap
 from camera import webcam_face_detect
@@ -7,6 +9,7 @@ import sys
 import logging
 
 app = Flask(__name__)
+app.secret_key = uuid.uuid4()
 cors = flask_cors.CORS()
 Bootstrap(app)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
