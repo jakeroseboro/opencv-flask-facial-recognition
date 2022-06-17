@@ -6,11 +6,10 @@ import flask_cors
 import sys
 import logging
 
-cors = flask_cors.CORS()
 app = Flask(__name__)
+cors = flask_cors.CORS()
 Bootstrap(app)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
 cors.init_app(app, resources={r"/*": {"origins": "*"}})
 
 
