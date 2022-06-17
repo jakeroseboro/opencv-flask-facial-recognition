@@ -42,6 +42,5 @@ def index():
     return render_template('facial_recognition.html')
 
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
