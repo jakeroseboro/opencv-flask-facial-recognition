@@ -22,8 +22,6 @@ def webcam_face_detect(video_mode, nogui=False, cascasdepath="haarcascade_fronta
             minSize=(30, 30)
 
         )
-
-        print("The number of faces found = ", len(faces))
         num_faces = len(faces)
 
         for (x, y, w, h) in faces:
